@@ -17,6 +17,12 @@
   .nav-link{
     padding: .25rem 0;
   }
+  .lead{
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 }
 
 @media screen and (max-width: 768px) {
@@ -32,6 +38,12 @@
   .column{
     padding: 1%;
   }
+  .lead{
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 }
 
 .btn-secondary,
@@ -79,11 +91,6 @@
   max-width: 68em;
 }
 
-.lead{
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 
 
