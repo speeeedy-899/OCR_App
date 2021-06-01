@@ -6,7 +6,7 @@ This is a deep learning based web application which can be used to extract text 
 <br>
 <h2>Contributors:</h2
   <ul>
-  <li>Ashish Chaidhary</li>
+  <li>Ashish Choudhary</li>
   <li>Jay Dhanwant</li>
   <li>Manuj Vyas</li>
   <li>Rohit Hansdah</li>
