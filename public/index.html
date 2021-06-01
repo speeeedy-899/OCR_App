@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <title>OCR App</title>
+
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/4379/4379661.png">
+
+  <!-- Bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+  <!-- Font awesome CDN -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- Custom styles for this template -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header>
+    <style>
+      div.preview-images>img {
+        width: 30%;
+      }
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container-fluid col-md-12">
+        <a class="navbar-brand" href="#">OCR Scanner</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="heading">
+      <div class="heading-text">
+        <h1>Scan and go</h1>
+        <p>Upload your documents and extract text on the fly.</p>
+      </div>
+    </div>
+
+
+
+    <div class="container scanner">
+
+      <div class="row">
+        <div class="col-lg-4">
+
+          <img class="dl-img image" src="https://image.flaticon.com/icons/png/512/2481/2481748.png" alt="DL">
+          <h2>Driving License</h2>
+          <p>Upload a standard Driving Licence</p>
+          <p><button id="button1" class="btn btn-secondary">Scan &raquo;</button></p>
+
+          <form class="" action="/index.html" method="get">
+            <input id="file-input1" type="file" name="dl" style="display: none;"></input>
+          </form>
+
+
+          <!-- Follow the link for custom loader: https://loading.io/asset/484443 -->
+          <div class="hidden-elements">
+            <div class="loader">
+              <img class="loader-1" src="loader.svg" alt="loading">
+            </div>
+
+            <div class="download-1">
+              <button class="btn btn-outline-success" type="submit" name="button">Download <i class="fas fa-download"></i></button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+
+          <img class="adhaar-img image" src="https://image.flaticon.com/icons/png/512/1828/1828469.png" alt="Adhaar">
+          <h2>Adhaar Card</h2>
+          <p>Upload the ID version of adhaar card</p>
+          <p><button id="button2" class="btn btn-secondary">Scan &raquo;</button></p>
+
+          <form class="" action="/" method="post">
+            <input id="file-input2" type="file" name="adhaar" style="display: none;"></input>
+          </form>
+
+
+          <!-- Follow the link for custom loader: https://loading.io/asset/484443 -->
+          <div class="hidden-elements">
+            <div class="loader">
+              <img class="loader-2" src="loader.svg" alt="loading">
+            </div>
+            <div class="download-2">
+              <button class="btn btn-outline-success" type="submit" name="button">Download <i class="fas fa-download"></i></button>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-4">
+          <img class="pan-img image" src="https://image.flaticon.com/icons/png/512/4285/4285680.png" alt="PAN">
+
+          <h2>PAN Card</h2>
+          <p>Upload a standard PAN Card</p>
+          <p><button id="button3" class="btn btn-secondary">Scan &raquo;</button></p>
+
+          <form class="" action="/" method="post">
+            <input id="file-input3" type="file" name="pan" style="display: none;"></input>
+          </form>
+
+
+          <!-- Follow the link for custom loader: https://loading.io/asset/484443 -->
+          <div class="hidden-elements">
+            <div class="loader">
+              <img class="loader-3" src="loader.svg" alt="loading">
+            </div>
+            <div class="download-3">
+              <button class="btn btn-outline-success" type="submit" name="button">Download <i class="fas fa-download"></i></button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+
+      $(document).ready(function() {
+
+      // Loader and download button hidden by default
+      $(".hidden-elements").hide(0, function(){
+
+      });
+
+        // Activating upload input form after clicking on "Scan" button
+        $("#button1").click(function() {
+          $('#file-input1').trigger('click');
+        });
+
+        $("#button2").click(function() {
+          $('#file-input2').trigger('click');
+        });
+
+        $("#button3").click(function() {
+          $('#file-input3').trigger('click');
+        });
+
+
+
+
+// -------------------------------------------------------Needs change in code----------------------------------------------------------//
+
+        //Tasks to be done:
+        // 1.Show loading animation and hide download button using .show() and .hide() when file is uploaded
+        // 2.Preventing the whole page to reload when upload form is submitted
+        // 3. Upload the file to the database
+
+        $("input[name='dl']").change(function(){
+          this.form.submit();
+          $(".loader-1").show(100, function(){
+
+          });
+          $(".download-1").hide(0, function(){
+
+          });
+        });
+
+        $("input[name='adhaar']").change(function(){
+          this.form.submit();
+          $(".loader-2").show(100, function(){
+
+          });
+          $(".download-2").show(0, function(){
+
+          });
+        });
+
+        $("input[name='pan']").change(function(){
+          this.form.submit();
+          $(".loader-3").show(100, function(){
+
+          });
+          $(".download-3").hide(0, function(){
+
+          });
+        });
+// -------------------------------------------------------Needs change in code----------------------------------------------------------//
+
+        let imagesPreview = function(input, placeToInsertImagePreview) {
+          if (input.files) {
+            let filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+              let reader = new FileReader();
+              reader.onload = function(event) {
+                $($.parseHTML("<img>"))
+                  .attr("src", event.target.result)
+                  .appendTo(placeToInsertImagePreview);
+              };
+              reader.readAsDataURL(input.files[i]);
+            }
+          }
+        };
+
+
+        $("#file").change(function() {
+          imagesPreview(this, "div.preview-images");
+
+
+        });
+      });
+    </script>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container ">
+        <p style="text-align: center; color">&copy; 2021 &middot; <a href="https://iitbhu.ac.in/">IIT(BHU)</a> &middot; <a href="about.html">About & Contact</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

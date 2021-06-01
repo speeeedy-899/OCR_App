@@ -1,0 +1,17 @@
+{
+  "name": "ocr-project",
+  "version": "1.0.0",
+  "description": "Builing an OCR app from scratch using Deep Learning, and deploying it as a web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jay Dhanwant| Manuj Vyas| Rohit Hansdah| Utsav Apurva",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0"
+  }
+}
